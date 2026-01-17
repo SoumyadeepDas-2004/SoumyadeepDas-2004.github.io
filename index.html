@@ -19,12 +19,12 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* This keeps padding inside the width */
+            box-sizing: border-box;
         }
 
         html, body {
             width: 100%;
-            overflow-x: hidden; /* STRICTLY prevents horizontal scroll/zoom */
+            overflow-x: hidden;
             font-family: var(--font-main);
             background: linear-gradient(to bottom, #0f172a, #020617);
             color: var(--text-color);
@@ -106,19 +106,18 @@
             font-size: 1.2rem;
             margin-bottom: 15px;
         }
-.hero-subtitle {
-    display: flex;
-    flex-direction: column; /* forces new line */
-    line-height: 1.3;
-}
+        .hero-subtitle {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
 
-.typewriter-wrapper {
-    display: block; /* ensures it stays on its own line */
-}
-
+        .typewriter-wrapper {
+            display: block;
+        }
 
         .hero h1 {
-            font-size: 5rem; /* Desktop size */
+            font-size: 5rem;
             line-height: 1.1;
             margin-bottom: 15px;
             font-weight: 800;
@@ -142,7 +141,6 @@
         .role { color: var(--accent-color); font-weight: 600; display: inline-block; }
 
         /* Typewriter */
-
         .typewriter-text {
             border-right: 3px solid var(--accent-color);
             padding-right: 5px;
@@ -150,8 +148,12 @@
         }
         @keyframes blink { 50% { border-color: transparent; } }
 
+        /* --- BUTTONS --- */
         .btn-group { display: flex; gap: 20px; margin-top: 20px; }
+        
+        /* FIX: Added display: inline-block to prevent overlap */
         .btn {
+            display: inline-block; 
             padding: 14px 28px;
             border-radius: 4px;
             font-weight: 600;
@@ -206,6 +208,12 @@
 
         /* --- CONTACT & FOOTER --- */
         .contact { text-align: center; padding: 100px 0; }
+        
+        .contact p {
+            margin-bottom: 40px; /* Increased margin for better spacing */
+            color: #94a3b8;
+        }
+
         .footer {
             text-align: center;
             padding: 40px 0;
@@ -243,15 +251,14 @@
 
 
         /* =========================================
-           MOBILE FIXES (Strict Enforcement)
+           MOBILE FIXES
            ========================================= */
         @media (max-width: 768px) {
             
-            /* GLOBAL: Prevent wider than screen */
             .container {
                 width: 100vw;
                 padding: 0 25px;
-                overflow: hidden; /* Clips any rogue content */
+                overflow: hidden;
             }
 
             section { padding: 60px 0; }
@@ -269,29 +276,27 @@
                 margin-top: 15px;
             }
 
-            /* HERO: Shrink Text to Fit Screen */
+            /* HERO */
             .hero { padding-top: 140px; text-align: center; }
-            
-            /* Critical: Reduce H1 size so it fits on 320px screens */
             .hero h1 { font-size: 2.8rem; word-wrap: break-word; } 
             .hero h2 { font-size: 1.5rem; }
             .hero p { font-size: 1rem; margin: 0 auto 30px; }
 
-            /* BUTTONS: Full Width */
+            /* BUTTONS */
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
 
-            /* GRIDS: Force Single Column Stack */
+            /* GRIDS */
             .skills-grid, .project-grid {
-                display: flex; /* Switch from Grid to Flex */
+                display: flex; 
                 flex-direction: column;
                 width: 100%;
                 gap: 20px;
             }
             
             .skill-card, .project-card {
-                width: 100%; /* Force full width */
-                min-width: 0; /* Allow shrinking */
+                width: 100%;
+                min-width: 0;
             }
 
             /* TITLE ALIGNMENT */
