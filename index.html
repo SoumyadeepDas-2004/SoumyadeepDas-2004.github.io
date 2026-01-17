@@ -151,7 +151,6 @@
         /* --- BUTTONS --- */
         .btn-group { display: flex; gap: 20px; margin-top: 20px; }
         
-        /* FIX: Added display: inline-block to prevent overlap */
         .btn {
             display: inline-block; 
             padding: 14px 28px;
@@ -206,23 +205,51 @@
             padding-left: 15px;
         }
 
-        /* --- CONTACT & FOOTER --- */
+        /* --- CONTACT --- */
         .contact { text-align: center; padding: 100px 0; }
         
         .contact p {
-            margin-bottom: 40px; /* Increased margin for better spacing */
+            margin-bottom: 40px;
             color: #94a3b8;
         }
 
+        /* --- REDESIGNED FOOTER --- */
         .footer {
             text-align: center;
-            padding: 40px 0;
-            font-size: 0.9rem;
-            color: #94a3b8;
+            padding: 60px 0 40px; /* More top padding for separation */
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: rgba(15, 23, 42, 0.5);
+            background-color: rgba(15, 23, 42, 0.8);
         }
-        .social-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 15px; }
+
+        .social-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; /* Wider gap for cleaner look */
+            margin-bottom: 40px; /* Push the "Designed by" text down */
+        }
+        
+        .social-links a { 
+            font-size: 0.9rem; 
+            text-transform: uppercase; /* Professional look */
+            letter-spacing: 1px;
+            color: #e2e8f0; /* Lighter white/grey */
+            opacity: 0.8;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover { 
+            color: var(--accent-color);
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .footer p {
+            font-family: var(--font-mono); /* Monospace for technical feel */
+            font-size: 0.8rem;
+            color: rgba(148, 163, 184, 0.5); /* Very subtle grey */
+            letter-spacing: 0.5px;
+        }
 
         /* --- MODAL --- */
         .skill-modal {
@@ -308,6 +335,11 @@
                 padding-bottom: 10px;
                 display: inline-block;
                 width: 100%;
+            }
+
+            /* Footer adjustments for small screens */
+            .social-links {
+                gap: 25px; /* Slightly tighter on mobile */
             }
         }
     </style>
