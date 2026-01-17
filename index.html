@@ -148,46 +148,35 @@
         }
         @keyframes blink { 50% { border-color: transparent; } }
 
-        /* --- PROFESSIONAL BUTTON STYLING (NEW) --- */
+        /* --- PROFESSIONAL BUTTONS (CLEAN & PREMIUM) --- */
         .btn-group { display: flex; gap: 20px; margin-top: 20px; }
         
         .btn {
             display: inline-block; 
-            padding: 16px 32px; /* Larger hit area */
-            border-radius: 8px; /* Smooth rounded corners */
+            padding: 15px 35px; /* Generous spacing = Premium feel */
+            border-radius: 4px; /* Slightly squared corners look more technical/professional */
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth physics */
-            z-index: 1;
+            
+            /* Typography upgrade for premium look */
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            
+            transition: all 0.2s ease-in-out;
         }
 
         .btn-primary {
-            background: rgba(56, 189, 248, 0.05); /* Subtle glass tint */
+            background-color: transparent;
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.1); /* Slight glow at rest */
         }
 
-        /* Hover State: Fills with color and glows */
         .btn-primary:hover {
-            background: var(--accent-color);
-            color: #0f172a; /* Dark text for high contrast */
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), 
-                        0 0 40px rgba(56, 189, 248, 0.1); /* Double glow */
-            transform: translateY(-3px); /* Lifts up */
-            border-color: var(--accent-color);
-        }
-
-        /* Active State: Click feedback for mobile */
-        .btn-primary:active {
-            transform: translateY(-1px) scale(0.98); /* Tactile press effect */
-            box-shadow: 0 0 5px rgba(56, 189, 248, 0.4);
+            background-color: var(--accent-color);
+            color: #0f172a; /* Dark text on bright background for readability */
+            transform: translateY(-2px); /* Very subtle lift, no glow */
         }
 
         /* --- SKILLS & PROJECTS GRID --- */
@@ -218,17 +207,18 @@
             font-size: 0.85rem;
         }
 
-        /* --- VIEW CODE LINK STYLING --- */
+        /* View Code Link Styling */
         .project-link {
             color: var(--accent-color);
             font-weight: bold;
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            margin-top: auto; /* Pushes to bottom of card */
+            margin-top: auto; 
             position: relative;
         }
-
+        
+        /* Subtle underline animation */
         .project-link::after {
             content: '';
             position: absolute;
